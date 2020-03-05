@@ -9,21 +9,21 @@
 name: Build OpenWrt
 
 on:
-  release:
+  release:                             #发布触发编辑
     types: [published]
-  push:
+  push:                                #去除星号出发配置编辑
     branches:
       - dev-lean-lede
     paths:
       - '.config'
-#  schedule:
+#  schedule:                           #去除符号触发定时编译
 #    - cron: 0 8 * * 5
-  watch:
+  watch:                               #去除符号触发star编译
     types: [started]
 
 env:
-  REPO_URL: https://github.com/Lienol/openwrt
-  REPO_BRANCH: dev-lean-lede
+  REPO_URL: https://github.com/Lienol/openwrt       #选择需要编译源码路径
+  REPO_BRANCH: dev-lean-lede                        #选择需要编译版本
   CONFIG_FILE: .config
   DIY_SH: diy.sh
   FREE_UP_DISK: false
